@@ -6,9 +6,10 @@ class CuentaBancaria{
         
         if(saldoInicial < 0) {
             console.log("El saldo no puede ser negativo.");
+            this.#saldoInicial = 0;
+        }else{
+            this.#saldoInicial = saldoInicial;
         }
-
-        this.#saldoInicial = saldoInicial;
     }
     
     get getSaldo() {
@@ -24,7 +25,7 @@ class CuentaBancaria{
     }
 }
 
-const cuenta1 = new CuentaBancaria("Juan Pérez", 1000);
+const cuenta1 = new CuentaBancaria("Juan Pérez", -1000);
 console.log(cuenta1.getSaldo);
 cuenta1.setSaldo = 1500;
 console.log(cuenta1.getSaldo);
